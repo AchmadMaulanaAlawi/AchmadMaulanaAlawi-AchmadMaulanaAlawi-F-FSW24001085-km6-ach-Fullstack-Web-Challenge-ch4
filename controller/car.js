@@ -47,6 +47,8 @@ exports.createCar = async (req, res, next) => {
       year,
     } = req.body
 
+    console.log(req.body)
+
     const { image } = req.files // get photo file
 
     if (!plate || plate == "") {
