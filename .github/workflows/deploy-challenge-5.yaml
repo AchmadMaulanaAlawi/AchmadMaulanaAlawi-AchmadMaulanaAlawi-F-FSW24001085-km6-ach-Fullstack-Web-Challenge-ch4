@@ -18,10 +18,9 @@ jobs:
                   echo "$SECRETS" | tr ';' '\n' >> .env
 
             - name: Install dependencies
-              working-directory: ./chapter-5/topic-1
               run: npm install
+   
    - name: Migrate the new database
-              working-directory: ./chapter-5/topic-1
               run: npx sequelize db:migrate
 
             - id: "auth"
