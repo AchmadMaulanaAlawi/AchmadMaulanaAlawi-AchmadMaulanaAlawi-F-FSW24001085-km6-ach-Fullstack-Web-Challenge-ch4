@@ -31,7 +31,6 @@ exports.register = async (payload) => {
 }
 
 exports.login = async (email, password) => {
-  console.log(email)
   // get the user
   let user = await getUserByEmail(email)
   if (!user) {
