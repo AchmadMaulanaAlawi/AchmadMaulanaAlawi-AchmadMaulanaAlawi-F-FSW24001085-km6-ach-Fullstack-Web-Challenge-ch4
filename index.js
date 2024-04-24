@@ -1,18 +1,21 @@
+require("dotenv").config() // enable dotenv
+
 const express = require("express")
 const fileUpload = require("express-fileupload")
-const router = require("./route")
 const cors = require("cors")
+const router = require("./route")
 
 const app = express()
 const port = process.env.PORT || 4000
 
+// enable cors, to allow access from frontend to server (cloud)
 app.use(cors())
 
 app.use(express.json()) // body -> json
 app.use(
   fileUpload({
     useTempFiles: true,
-    tempFileDir: process.env.NODE_ENV == "development" ? "./tmp" : "/tmp",
+    tempFileDir: process.env.NODE_ENV == "development" ? "./tmp" : "/tmp", // if you're using GCP App Engine please don't comment this, because the ./tmp directory is read only and we need write too so we use /tmp
   })
 ) // body -> form-data
 app.use(express.static("public"))
