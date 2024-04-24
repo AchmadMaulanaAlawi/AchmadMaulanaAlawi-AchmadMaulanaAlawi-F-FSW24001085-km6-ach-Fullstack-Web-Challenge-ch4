@@ -1,9 +1,12 @@
 const express = require("express")
 const fileUpload = require("express-fileupload")
 const router = require("./route")
+const cors = require("cors")
 
 const app = express()
 const port = process.env.PORT || 4000
+
+app.use(cors)
 
 app.use(express.json()) // body -> json
 app.use(
