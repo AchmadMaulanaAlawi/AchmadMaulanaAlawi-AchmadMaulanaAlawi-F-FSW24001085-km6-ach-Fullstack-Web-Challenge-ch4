@@ -1,5 +1,5 @@
 runtime: nodejs20
 service: alawi-ch-5
 
-onvpc_access_connector:
-  name: "projects/solar-bolt-420712/locatis/asia-southeast2/connectors/connect-to-sql"
+vpc_access_connector:
+  name: "projects/solar-bolt-420712/locations/asia-southeast2/connectors/connect-to-sql"
