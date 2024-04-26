@@ -49,7 +49,7 @@ exports.createCar = async (req, res, next) => {
 
     console.log(req.body)
 
-    const { image } = req.files // get photo file
+    const { image } = req?.files?.image // get photo file
 
     if (!plate || plate == "") {
       return next({
@@ -142,7 +142,7 @@ exports.updateCar = async (req, res, next) => {
       type,
       year,
     } = req.body
-    const { image } = req.files
+    const { image } = req?.files?.image
 
     if (!plate || plate == "") {
       return next({
