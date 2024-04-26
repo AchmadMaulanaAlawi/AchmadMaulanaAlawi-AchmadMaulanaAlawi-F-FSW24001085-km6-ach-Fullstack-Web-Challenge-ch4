@@ -3,7 +3,7 @@ const { register, login, profile } = require("../usecase/auth")
 exports.register = async (req, res, next) => {
   try {
     // get the body
-    const { email, password, name } = req.body
+    const { email, password, name } = req?.body
 
     // get the photo
     const photo = req?.files?.photo
